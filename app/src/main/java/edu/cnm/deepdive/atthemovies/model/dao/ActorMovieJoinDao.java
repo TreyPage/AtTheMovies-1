@@ -6,7 +6,6 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import edu.cnm.deepdive.atthemovies.model.Actor;
 import edu.cnm.deepdive.atthemovies.model.ActorMovieJoin;
-
 import java.util.List;
 
 @Dao

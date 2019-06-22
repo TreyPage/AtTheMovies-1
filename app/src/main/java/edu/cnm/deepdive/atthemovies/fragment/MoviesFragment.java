@@ -1,23 +1,22 @@
-package edu.cnm.deepdive.atthemovies;
+package edu.cnm.deepdive.atthemovies.fragment;
 
 
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.*;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.*;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
+import edu.cnm.deepdive.atthemovies.R;
+import edu.cnm.deepdive.atthemovies.fragment.MoviesFragmentDirections.ActionMoviesFragmentToActorsFragment2;
 import edu.cnm.deepdive.atthemovies.model.Movie;
 import edu.cnm.deepdive.atthemovies.viewmodel.MoviesViewModel;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -58,7 +57,7 @@ public class MoviesFragment extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         //This code opens the actor fragment and passes the movie id that was clicked
-                        MoviesFragmentDirections.ActionMoviesFragmentToActorsFragment2 action =
+                        ActionMoviesFragmentToActorsFragment2 action =
                                 MoviesFragmentDirections.actionMoviesFragmentToActorsFragment2()
                                         .setMovieId(adapter.getItem(position).getId());
                         Navigation.findNavController(view).navigate(action);

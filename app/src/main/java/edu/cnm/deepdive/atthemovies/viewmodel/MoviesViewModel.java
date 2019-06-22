@@ -8,7 +8,6 @@ import edu.cnm.deepdive.atthemovies.MoviesDatabase;
 import edu.cnm.deepdive.atthemovies.model.Actor;
 import edu.cnm.deepdive.atthemovies.model.ActorMovieJoin;
 import edu.cnm.deepdive.atthemovies.model.Movie;
-
 import java.util.List;
 
 public class MoviesViewModel extends AndroidViewModel {

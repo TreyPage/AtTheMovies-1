@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/moviesFragment"
-        android:name="edu.cnm.deepdive.atthemovies.MoviesFragment"
+      android:name="edu.cnm.deepdive.atthemovies.fragment.MoviesFragment"
         android:label="fragment_movies"
         tools:layout="@layout/fragment_movies" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/actorsFragment"
-        android:name="edu.cnm.deepdive.atthemovies.ActorsFragment"
+      android:name="edu.cnm.deepdive.atthemovies.fragment.ActorsFragment"
         android:label="fragment_actors"
         tools:layout="@layout/fragment_actors" >
         <argument

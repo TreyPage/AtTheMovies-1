@@ -3,7 +3,6 @@ package edu.cnm.deepdive.atthemovies.model;
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
 import java.io.Serializable;
 
 @Entity

@@ -1,5 +1,7 @@
 package edu.cnm.deepdive.atthemovies;
 
+import static org.junit.Assert.assertEquals;
+
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;

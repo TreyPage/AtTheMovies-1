@@ -31,12 +31,9 @@ public class MoviesViewModel extends AndroidViewModel {
     }
 
     public void addMovie(final Movie movie){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                MoviesDatabase db = MoviesDatabase.getInstance(getApplication());
-                db.movieDao().insert(movie);
-            }
+        new Thread(() -> {
+            MoviesDatabase db = MoviesDatabase.getInstance(getApplication());
+            db.movieDao().insert(movie);
         }).start();
     }
 
@@ -56,14 +53,11 @@ public class MoviesViewModel extends AndroidViewModel {
     }
 
     public void addActorToMovie(final Long movieId, final Long id) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                ActorMovieJoin actorMovieJoin = new ActorMovieJoin();
-                actorMovieJoin.setMovieId(movieId);
-                actorMovieJoin.setActorId(id);
-                MoviesDatabase.getInstance(getApplication()).actorMovieJoinDao().insert(actorMovieJoin);
-            }
+        new Thread(() -> {
+            ActorMovieJoin actorMovieJoin = new ActorMovieJoin();
+            actorMovieJoin.setMovieId(movieId);
+            actorMovieJoin.setActorId(id);
+            MoviesDatabase.getInstance(getApplication()).actorMovieJoinDao().insert(actorMovieJoin);
         }).start();
     }
 }

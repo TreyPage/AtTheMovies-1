@@ -11,23 +11,23 @@ import edu.cnm.deepdive.atthemovies.model.dao.ActorDao;
 import edu.cnm.deepdive.atthemovies.model.dao.ActorMovieJoinDao;
 import edu.cnm.deepdive.atthemovies.model.dao.MovieDao;
 
-@Database(entities = {Movie.class, Actor.class, ActorMovieJoin.class}, version = 1)
+@Database(entities = {Movie.class, Actor.class, ActorMovieJoin.class}, version = 2)
 public abstract class MoviesDatabase extends RoomDatabase {
 
-    public abstract MovieDao movieDao();
+  public abstract MovieDao movieDao();
 
-    public abstract ActorDao actorDao();
+  public abstract ActorDao actorDao();
 
-    public abstract ActorMovieJoinDao actorMovieJoinDao();
+  public abstract ActorMovieJoinDao actorMovieJoinDao();
 
-    private static MoviesDatabase INSTANCE;
+  private static MoviesDatabase INSTANCE;
 
-    public static MoviesDatabase getInstance(Context context){
-        if (INSTANCE == null){
-            INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                    MoviesDatabase.class, "movies_room").build();
-        }
-        return INSTANCE;
+  public static MoviesDatabase getInstance(Context context) {
+    if (INSTANCE == null) {
+      INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+          MoviesDatabase.class, "movies_room").fallbackToDestructiveMigration().build();
     }
+    return INSTANCE;
+  }
 
 }
